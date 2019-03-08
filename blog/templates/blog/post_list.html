@@ -7,23 +7,13 @@
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 8.03.2019, 17:02</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Some say the world will end in fire;</p>
-            <p>Some say in ice.</p>
-            <p>From what I've tasted of desire</p>
-            <p>I hold with those who favor fire.</p>
-        </div>
-
-        <div>
-            <p>published: 8.03.2019, 17:03</p>
-            <h2><a href="">My second post</a></h2>
-            <p>But if it had to perish twice,</p>
-            <p>I think I know enough of hate</p>
-            <p>To know that for destruction ice</p>
-            <p>Is also great</p>
-            <p>And would suffice.</p>
+          {% for post in posts %}
+              <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+             </div>
+          {% endfor %}
         </div>
     </body>
 </html>
